@@ -1,0 +1,26 @@
+[
+    {
+        "name": "priya saroj",
+        "company": "Private Wedding Client, The Hamptons",
+        "quote": "Gourmet Affair transformed our daughter's wedding into an absolute fairy tale. The attention to detail was extraordinary, and our guests are still talking about the food months later. Truly world-class.",
+        "photo": "https:\/\/images.unsplash.com\/photo-1494790108377-be9c29b29330?w=200"
+    },
+    {
+        "name": "Richard Thornton",
+        "company": "CEO, Thornton Capital Partners",
+        "quote": "We have worked with many caterers over the years, but none have matched the professionalism and culinary excellence of Gourmet Affair. Our annual board dinner has reached new heights since partnering with them.",
+        "photo": "https:\/\/images.unsplash.com\/photo-1472099645785-5658abf4ff4e?w=200"
+    },
+    {
+        "name": "Isabella Romano",
+        "company": "Private Client, Milan",
+        "quote": "The themed concept dinner they created for our anniversary was nothing short of magical. Every course told a story, and the presentation was like art on a plate. An unforgettable evening.",
+        "photo": "https:\/\/images.unsplash.com\/photo-1580489944761-15a19d654956?w=200"
+    },
+    {
+        "name": "James Wellington",
+        "company": "Event Director, Wellington Group",
+        "quote": "From the initial tasting to the final course at our corporate gala, the team at Gourmet Affair demonstrated why they are the best in the business. Flawless execution and truly exceptional cuisine.",
+        "photo": "https:\/\/images.unsplash.com\/photo-1507003211169-0a1dd7228f2d?w=200"
+    }
+]

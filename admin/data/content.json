@@ -1,0 +1,39 @@
+{
+    "home": {
+        "hero_slide_1_eyebrow": "Since 1998",
+        "hero_slide_1_title": "Culinary Artistry for Discerning Palates",
+        "hero_slide_1_subtitle": "We transform every occasion into an extraordinary gastronomic journey, crafting bespoke menus that tell your unique story through flavor.",
+        "hero_slide_1_bg": "https:\/\/images.unsplash.com\/photo-1414235077428-338989a2e8c0?w=1920",
+        "hero_slide_2_eyebrow": "Award-Winning Cuisine",
+        "hero_slide_2_title": "Where Every Bite is a Masterpiece",
+        "hero_slide_2_subtitle": "From intimate private dinners to grand galas, our Michelin-trained chefs deliver unparalleled excellence that exceeds every expectation.",
+        "hero_slide_2_bg": "https:\/\/images.unsplash.com\/photo-1559339352-11d035aa65de?w=1920",
+        "hero_slide_3_eyebrow": "White-Glove Service",
+        "hero_slide_3_title": "Creating Memories That Last Forever",
+        "hero_slide_3_subtitle": "With over two decades of experience, we have curated thousands of unforgettable events for the world's most prestigious clients.",
+        "hero_slide_3_bg": "https:\/\/images.unsplash.com\/photo-1519225421980-715cb0215aed?w=1920",
+        "about_eyebrow": "Our Story",
+        "about_title": "A Legacy of Culinary Excellence",
+        "about_text_1": "Founded in 1998, Gourmet Affair began as a small family kitchen with an unwavering commitment to exceptional food. Over two decades, we have grown into one of the most sought-after luxury catering companies, serving discerning clients across the globe.",
+        "about_text_2": "What sets us apart is our relentless pursuit of perfection. Every dish that leaves our kitchen is a testament to our passion for culinary artistry, our respect for the finest ingredients, and our dedication to creating moments that linger in memory long after the last course.",
+        "about_text_3": "Our team of Michelin-trained chefs, sommeliers, and event specialists work in harmony to deliver experiences that are as visually stunning as they are delicious. We don't just cater events — we craft stories through food.",
+        "about_img_1": "https:\/\/images.unsplash.com\/photo-1600565193348-f74bd3c7ccdf?w=800",
+        "about_img_2": "https:\/\/images.unsplash.com\/photo-1556909114-f6e7ad7d3136?w=600",
+        "quality_title": "Only the Finest Ingredients",
+        "quality_text_1": "We believe that exceptional cuisine begins with exceptional ingredients. That's why we partner with artisan producers, organic farms, and sustainable fisheries across the globe to source only the finest seasonal produce.",
+        "quality_text_2": "Every ingredient that enters our kitchen is hand-selected by our executive chef. From truffles foraged in the hills of Piedmont to sustainably caught seafood from the coasts of Maine, we accept nothing less than perfection.",
+        "quality_img": "https:\/\/images.unsplash.com\/photo-1466637574441-749b8f19452f?w=800",
+        "quality_badge_number": "25",
+        "quality_badge_text": "Years of Excellence",
+        "cta_title": "Book a Complimentary Food Tasting Session",
+        "cta_subtitle": "Let us craft a bespoke menu tailored to your palate. Schedule a private tasting with our executive chef and discover why discerning clients choose Gourmet Affair."
+    },
+    "about_page": {
+        "story_title": "A Journey of Passion & Precision",
+        "story_text_1": "What began as a humble family kitchen in 1998 has grown into a distinguished luxury catering house, known for exceptional cuisine, impeccable service, and unforgettable experiences. Our founder, Chef Marcus Whitfield, believed that extraordinary food could transform ordinary moments into lifelong memories. Today, that philosophy remains at the heart of everything we create.",
+        "story_text_2": "That belief became our north star. Over twenty-five years, we have catered over 3,000 events across six continents, from intimate dinners for two to galas for 2,000 guests. Each event is approached with the same meticulous care and creative passion.",
+        "story_text_3": "Today, Gourmet Affair employs a team of 120 culinary professionals, including 15 Michelin-starred chefs, 8 master sommeliers, and a dedicated events team that ensures every detail is executed to perfection.",
+        "story_img_1": "https:\/\/images.unsplash.com\/photo-1577219491135-ce391730fb2c?w=800",
+        "story_img_2": "https:\/\/images.unsplash.com\/photo-1556910103-1c02745aae4d?w=600"
+    }
+}

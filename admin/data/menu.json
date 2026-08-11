@@ -1,0 +1,83 @@
+{
+    "contemporary_european": [
+        {
+            "name": "Seared Foie Gras with Fig Compote",
+            "desc": "paneer tikka",
+            "price": "$138"
+        },
+        {
+            "name": "Wagyu Beef Carpaccio",
+            "desc": "A5 Japanese wagyu, truffle oil, parmesan shavings, caper berries, micro arugula",
+            "price": "$45"
+        },
+        {
+            "name": "Lobster Thermidor Reimagined",
+            "desc": "Whole Maine lobster, cognac cream, gruyère crust, saffron potatoes",
+            "price": "$68"
+        },
+        {
+            "name": "Duck Confit with Cherry Glaze",
+            "desc": "Slow-cooked duck leg, sour cherry gastrique, parsnip purée, crispy shallots",
+            "price": "$42"
+        },
+        {
+            "name": "matar paneer",
+            "desc": "good",
+            "price": "50$"
+        }
+    ],
+    "pan_asian_fusion": [
+        {
+            "name": "Tuna Tataki with Yuzu Kosho",
+            "desc": "Seared bluefin tuna, yuzu kosho, avocado mousse, sesame tuile, ponzu gel",
+            "price": "$36"
+        },
+        {
+            "name": "Miso Glazed Black Cod",
+            "desc": "Nobu-style miso marinade, dashi foam, pickled ginger, shiso leaf",
+            "price": "$52"
+        },
+        {
+            "name": "Thai Green Curry Prawns",
+            "desc": "Jumbo tiger prawns, house-made green curry, coconut jasmine rice, Thai basil",
+            "price": "$44"
+        },
+        {
+            "name": "Peking Duck with Caviar",
+            "desc": "Crispy duck skin, osetra caviar, steamed pancakes, hoisin, cucumber ribbons",
+            "price": "$58"
+        },
+        {
+            "name": "Matcha Tiramisu",
+            "desc": "Ceremonial grade matcha, mascarpone, sake-soaked ladyfingers, white chocolate",
+            "price": "$24"
+        }
+    ],
+    "farm_to_table": [
+        {
+            "name": "Heirloom Tomato Salad",
+            "desc": "Rainbow heirloom tomatoes, burrata, basil oil, aged balsamic, toasted pine nuts",
+            "price": "$26"
+        },
+        {
+            "name": "Wild Mushroom Risotto",
+            "desc": "Arborio rice, porcini, chanterelle, truffle butter, parmesan reggiano, chive oil",
+            "price": "$34"
+        },
+        {
+            "name": "Herb-Crusted Rack of Lamb",
+            "desc": "New Zealand lamb, herb crust, roasted root vegetables, red wine jus, mint gel",
+            "price": "$56"
+        },
+        {
+            "name": "Pan-Seared Sea Bass",
+            "desc": "Line-caught sea bass, fennel confit, saffron broth, baby vegetables, lemon foam",
+            "price": "$48"
+        },
+        {
+            "name": "Seasonal Fruit Tart",
+            "desc": "Pâte sablée, vanilla pastry cream, market-fresh fruits, edible flowers, honey drizzle",
+            "price": "$22"
+        }
+    ]
+}
