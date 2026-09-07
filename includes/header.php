@@ -32,6 +32,11 @@ if (!is_array($gallery_data)) {
     $gallery_data = [];
 }
 
+$instagram_videos_data = readData('instagram_videos');
+if (!is_array($instagram_videos_data)) {
+    $instagram_videos_data = [];
+}
+
 $site_name = $site_settings['site_name'] ?? 'Gourmet Affair';
 $site_address = $site_settings['address'] ?? '';
 $site_phone1 = $site_settings['phone1'] ?? '';

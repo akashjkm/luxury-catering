@@ -33,6 +33,7 @@ $hero_slides = [
 ];
 $gallery_preview_items = array_slice($gallery_data, 0, 5);
 $testimonial_items = $testimonials_data;
+$instagram_videos = array_slice($instagram_videos_data, 0, 6);
 ?>
 
 <!-- Hero Slider -->
@@ -334,6 +335,39 @@ $testimonial_items = $testimonials_data;
             <button class="testimonial-arrow prev" aria-label="Previous testimonial"><i class="bi bi-chevron-left"></i></button>
             <button class="testimonial-arrow next" aria-label="Next testimonial"><i class="bi bi-chevron-right"></i></button>
         </div>
+    </div>
+</section>
+
+<!-- Instagram Videos -->
+<section class="instagram-section">
+    <div class="container">
+        <div class="section-header center" data-aos="fade-up">
+            <span class="eyebrow">From Our Kitchen</span>
+            <h2 class="section-title">Latest on Instagram</h2>
+            <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">A closer look at the flavours, celebrations, and details behind our latest events.</p>
+        </div>
+
+        <?php if (!empty($instagram_videos)): ?>
+        <div class="instagram-grid" data-aos="fade-up" data-aos-delay="200">
+            <?php foreach ($instagram_videos as $video): ?>
+            <?php $permalink = $video['url'] ?? ''; ?>
+            <?php if ($permalink !== ''): ?>
+            <div class="instagram-video-card">
+                <blockquote class="instagram-media" data-instgrm-permalink="<?php echo htmlspecialchars($permalink, ENT_QUOTES, 'UTF-8'); ?>" data-instgrm-version="14">
+                    <a href="<?php echo htmlspecialchars($permalink, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer">View this post on Instagram</a>
+                </blockquote>
+            </div>
+            <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+        <script async src="https://www.instagram.com/embed.js"></script>
+        <?php endif; ?>
+
+        <?php if (!empty($site_settings['instagram'] ?? '')): ?>
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="<?php echo htmlspecialchars($site_settings['instagram'], ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-outline-gold" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram me-2"></i>Follow Our Journey</a>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 
