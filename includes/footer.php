@@ -107,11 +107,12 @@
                     <p class="newsletter-text">Receive seasonal menus, event inspiration, and exclusive tasting invitations.</p>
                 </div>
                 <div class="col-lg-6">
-                    <form class="newsletter-form" action="" method="POST">
+                    <form class="newsletter-form" id="newsletterForm" action="<?php echo $base_path; ?>api/subscribe-newsletter.php" method="POST">
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your email address" required>
+                            <input type="email" name="email" class="form-control" placeholder="Your email address" required>
                             <button class="btn btn-gold" type="submit">Subscribe</button>
                         </div>
+                        <div id="newsletterFeedback" class="mt-2" style="font-size: 0.85rem; display: none;"></div>
                     </form>
                 </div>
             </div>
@@ -156,7 +157,8 @@
             </div>
             <div class="modal-body">
                 <p class="modal-subtitle">Tell us about your event and our team will craft a bespoke proposal within 24 hours.</p>
-                <form id="enquiryForm" action="" method="POST">
+                <div id="enquiryAlert" class="alert d-none mb-3"></div>
+                <form id="enquiryForm" action="<?php echo $base_path; ?>api/submit-enquiry.php" method="POST">
                     <div class="mb-3">
                         <input type="text" class="form-control" name="name" placeholder="Your Full Name *" required>
                     </div>
@@ -181,7 +183,7 @@
                     <div class="mb-3">
                         <textarea class="form-control" name="message" rows="4" placeholder="Tell us about your event — guest count, date, venue, cuisine preferences..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-gold w-100">Send Enquiry</button>
+                    <button type="submit" class="btn btn-gold w-100" id="enquirySubmitBtn">Send Enquiry</button>
                 </form>
             </div>
         </div>

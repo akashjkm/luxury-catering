@@ -8,11 +8,31 @@ if (isLoggedIn()) {
 
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = $_POST['username'] ?? '';
-    $pass = $_POST['password'] ?? '';
+    $user = trim($_POST['username'] ?? '');
+    $pass = trim($_POST['password'] ?? '');
 
-    if ($user === ADMIN_USER && $pass === ADMIN_PASS) {
+    $authenticated = false;
+    $adminUser = null;
+
+    if (isDbConnected()) {
+        $admin = dbFetchOne("SELECT * FROM admins WHERE username = ? LIMIT 1", [$user]);
+        if ($admin && password_verify($pass, $admin['password'])) {
+            $authenticated = true;
+            $adminUser = $admin['username'];
+            $_SESSION['admin_id'] = $admin['id'];
+            $_SESSION['admin_email'] = $admin['email'];
+        }
+    }
+
+    // Fallback if DB is offline or initial setup
+    if (!$authenticated && $user === ADMIN_USER && $pass === ADMIN_PASS) {
+        $authenticated = true;
+        $adminUser = ADMIN_USER;
+    }
+
+    if ($authenticated) {
         $_SESSION['admin_logged_in'] = true;
+        $_SESSION['admin_user'] = $adminUser;
         header('Location: dashboard.php');
         exit;
     } else {

@@ -2,6 +2,40 @@
 $page_title = 'Contact Us';
 $page_desc = 'Get in touch with Gourmet Affair to plan your next luxury event. Book a tasting, request a proposal, or speak with our team.';
 $base_path = '';
+
+$contact_success = '';
+$contact_error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require_once __DIR__ . '/includes/db.php';
+
+    $name      = trim($_POST['name'] ?? '');
+    $email     = trim($_POST['email'] ?? '');
+    $phone     = trim($_POST['phone'] ?? '');
+    $eventType = trim($_POST['event_type'] ?? '');
+    $eventDate = trim($_POST['event_date'] ?? '');
+    $venue     = trim($_POST['venue'] ?? '');
+    $message   = trim($_POST['message'] ?? '');
+
+    if (empty($name) || empty($email) || empty($phone)) {
+        $contact_error = 'Please fill in all required fields (Name, Email, Phone).';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $contact_error = 'Please provide a valid email address.';
+    } else {
+        if (isDbConnected()) {
+            $sql = "INSERT INTO inquiries (name, email, phone, event_type, event_date, venue, message, source, status) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, 'contact_page', 'new')";
+            if (dbExecute($sql, [$name, $email, $phone, $eventType, $eventDate, $venue, $message])) {
+                $contact_success = "Thank you, " . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . "! Your enquiry has been received. Our team will contact you within 24 hours.";
+            } else {
+                $contact_error = 'Unable to save your message. Please try again or call us directly.';
+            }
+        } else {
+            $contact_error = 'Database is currently offline. Please reach out to us by phone directly.';
+        }
+    }
+}
+
 include 'includes/header.php';
 ?>
 
@@ -69,6 +103,22 @@ include 'includes/header.php';
                     <span class="eyebrow">Send a Message</span>
                     <h2 class="section-title">Let's Plan Your Event</h2>
                     <p class="mb-4" style="color: var(--color-text-light);">Fill out the form below and our team will respond within 24 hours with a bespoke proposal tailored to your event.</p>
+
+                    <?php if (!empty($contact_success)): ?>
+                    <div class="alert mb-4" style="background: rgba(201, 169, 98, 0.15); border: 1px solid var(--color-gold); color: #fff; padding: 16px 20px; border-radius: 4px;">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill me-3" style="color: var(--color-gold); font-size: 1.4rem;"></i>
+                            <div><?php echo $contact_success; ?></div>
+                        </div>
+                    </div>
+                    <?php elseif (!empty($contact_error)): ?>
+                    <div class="alert mb-4" style="background: rgba(220, 53, 69, 0.15); border: 1px solid #dc3545; color: #ff8585; padding: 16px 20px; border-radius: 4px;">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-exclamation-triangle-fill me-3" style="color: #dc3545; font-size: 1.4rem;"></i>
+                            <div><?php echo htmlspecialchars($contact_error, ENT_QUOTES, 'UTF-8'); ?></div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
 
                     <form action="" method="POST">
                         <div class="row g-3">

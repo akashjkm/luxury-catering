@@ -5,8 +5,15 @@ requireLogin();
 $flash = getFlash();
 $current_page = basename($_SERVER['PHP_SELF'], '.php');
 
+$unread_inquiries = 0;
+if (isDbConnected()) {
+    $row = dbFetchOne("SELECT COUNT(*) AS cnt FROM inquiries WHERE status = 'new'");
+    $unread_inquiries = (int)($row['cnt'] ?? 0);
+}
+
 $nav_items = [
     'dashboard' => ['icon' => 'bi-speedometer2', 'label' => 'Dashboard'],
+    'inquiries' => ['icon' => 'bi-envelope', 'label' => 'Inquiries', 'badge' => $unread_inquiries],
     'images' => ['icon' => 'bi-images', 'label' => 'Images'],
     'content' => ['icon' => 'bi-file-text', 'label' => 'Content'],
     'contact-info' => ['icon' => 'bi-telephone', 'label' => 'Contact Info'],
@@ -37,9 +44,12 @@ $nav_items = [
 
     <nav class="sidebar-nav">
         <?php foreach ($nav_items as $key => $item): ?>
-        <a href="<?php echo $key; ?>.php" class="sidebar-link <?php echo $current_page === $key ? 'active' : ''; ?>">
+        <a href="<?php echo $key; ?>.php" class="sidebar-link <?php echo $current_page === $key ? 'active' : ''; ?> d-flex align-items-center">
             <i class="bi <?php echo $item['icon']; ?>"></i>
             <span><?php echo $item['label']; ?></span>
+            <?php if (!empty($item['badge']) && $item['badge'] > 0): ?>
+            <span class="badge bg-danger ms-auto rounded-pill" style="font-size: 0.72rem; padding: 4px 8px;"><?php echo $item['badge']; ?></span>
+            <?php endif; ?>
         </a>
         <?php endforeach; ?>
     </nav>

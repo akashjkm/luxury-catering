@@ -335,6 +335,86 @@ $(document).ready(function() {
         }
     });
 
+    // ============================================
+    // AJAX ENQUIRY MODAL FORM
+    // ============================================
+
+    $('#enquiryForm').on('submit', function(e) {
+        e.preventDefault();
+        const $form = $(this);
+        const $btn = $('#enquirySubmitBtn');
+        const $alert = $('#enquiryAlert');
+        const originalText = $btn.text();
+
+        $btn.prop('disabled', true).text('Sending Enquiry...');
+        $alert.addClass('d-none').removeClass('alert-success alert-danger').empty();
+
+        $.ajax({
+            url: $form.attr('action') || 'api/submit-enquiry.php',
+            method: 'POST',
+            data: $form.serialize(),
+            dataType: 'json',
+            success: function(res) {
+                if (res.success) {
+                    $alert.removeClass('d-none alert-danger').addClass('alert alert-success').text(res.message);
+                    $form[0].reset();
+                } else {
+                    $alert.removeClass('d-none alert-success').addClass('alert alert-danger').text(res.message || 'Error sending enquiry.');
+                }
+            },
+            error: function(xhr) {
+                let msg = 'Failed to send enquiry. Please try again.';
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    msg = xhr.responseJSON.message;
+                }
+                $alert.removeClass('d-none alert-success').addClass('alert alert-danger').text(msg);
+            },
+            complete: function() {
+                $btn.prop('disabled', false).text(originalText);
+            }
+        });
+    });
+
+    // ============================================
+    // AJAX NEWSLETTER SUBSCRIPTION
+    // ============================================
+
+    $('#newsletterForm').on('submit', function(e) {
+        e.preventDefault();
+        const $form = $(this);
+        const $btn = $form.find('button[type="submit"]');
+        const $feedback = $('#newsletterFeedback');
+        const originalText = $btn.text();
+
+        $btn.prop('disabled', true).text('...');
+        $feedback.hide().empty();
+
+        $.ajax({
+            url: $form.attr('action') || 'api/subscribe-newsletter.php',
+            method: 'POST',
+            data: $form.serialize(),
+            dataType: 'json',
+            success: function(res) {
+                if (res.success) {
+                    $feedback.css('color', 'var(--color-gold)').text(res.message).fadeIn();
+                    $form[0].reset();
+                } else {
+                    $feedback.css('color', '#ff8585').text(res.message || 'Subscription failed.').fadeIn();
+                }
+            },
+            error: function(xhr) {
+                let msg = 'Subscription failed. Please try again.';
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    msg = xhr.responseJSON.message;
+                }
+                $feedback.css('color', '#ff8585').text(msg).fadeIn();
+            },
+            complete: function() {
+                $btn.prop('disabled', false).text(originalText);
+            }
+        });
+    });
+
     $('body').fadeIn(300);
 
 });
