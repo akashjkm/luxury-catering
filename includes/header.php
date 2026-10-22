@@ -32,11 +32,6 @@ if (!is_array($gallery_data)) {
     $gallery_data = [];
 }
 
-$instagram_videos_data = readData('instagram_videos');
-if (!is_array($instagram_videos_data)) {
-    $instagram_videos_data = [];
-}
-
 $site_name = $site_settings['site_name'] ?? 'Gourmet Affair';
 $site_address = $site_settings['address'] ?? '';
 $site_phone1 = $site_settings['phone1'] ?? '';
@@ -74,7 +69,7 @@ $site_email = $site_settings['email'] ?? '';
 </head>
 <body>
 
-<!-- Top Bar -->
+<!-- Top Bar
 <div class="top-bar">
     <div class="container">
         <div class="row align-items-center">
@@ -91,7 +86,7 @@ $site_email = $site_settings['email'] ?? '';
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">

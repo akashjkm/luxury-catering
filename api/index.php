@@ -6,6 +6,11 @@ $requestUri = $_SERVER['REQUEST_URI'] ?? '/';
 $path = parse_url($requestUri, PHP_URL_PATH) ?: '/';
 $path = '/' . ltrim(rawurldecode($path), '/');
 
+if ($path === '/setup_database.php') {
+    http_response_code(404);
+    exit;
+}
+
 if ($path === '/' || $path === '') {
     $requestedFile = '/index.php';
 } else {

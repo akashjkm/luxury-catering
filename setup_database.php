@@ -171,16 +171,22 @@ try {
 
     outputMsg("All database tables created or verified.", 'success');
 
-    // 3. Seed default Admin User if not present
-    $stmt = $pdo->prepare("SELECT id FROM `admins` WHERE `username` = ?");
-    $stmt->execute(['admin']);
-    if (!$stmt->fetch()) {
-        $defaultPassword = password_hash('admin123', PASSWORD_DEFAULT);
-        $insertAdmin = $pdo->prepare("INSERT INTO `admins` (`username`, `password`, `email`) VALUES (?, ?, ?)");
-        $insertAdmin->execute(['admin', $defaultPassword, 'admin@gourmetaffair.com']);
-        outputMsg("Default admin account created: username 'admin', password 'admin123'.", 'success');
+    // 3. Seed an admin only when explicit credentials are configured.
+    $adminUser = getenv('ADMIN_USER') ?: '';
+    $adminPass = getenv('ADMIN_PASS') ?: '';
+    if ($adminUser !== '' && $adminPass !== '') {
+        $stmt = $pdo->prepare("SELECT id FROM `admins` WHERE `username` = ?");
+        $stmt->execute([$adminUser]);
+        if (!$stmt->fetch()) {
+            $hashedPassword = password_hash($adminPass, PASSWORD_DEFAULT);
+            $insertAdmin = $pdo->prepare("INSERT INTO `admins` (`username`, `password`, `email`) VALUES (?, ?, ?)");
+            $insertAdmin->execute([$adminUser, $hashedPassword, getenv('ADMIN_EMAIL') ?: 'admin@gourmetaffair.com']);
+            outputMsg("Configured admin account created.", 'success');
+        } else {
+            outputMsg("Admin account already exists.", 'info');
+        }
     } else {
-        outputMsg("Admin account already exists.", 'info');
+        outputMsg("Admin account not seeded; configure ADMIN_USER and ADMIN_PASS first.", 'warning');
     }
 
     // 4. Migrate existing JSON data

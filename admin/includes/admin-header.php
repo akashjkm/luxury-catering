@@ -38,7 +38,7 @@ $nav_items = [
 <!-- Sidebar -->
 <aside class="admin-sidebar">
     <div class="sidebar-brand">
-        <span class="brand-text">Gourmet<span class="brand-accent">Affair</span></span>
+        <span class="brand-text">Ram<span class="brand-accent">Babu</span></span>
         <small>Admin Panel</small>
     </div>
 

@@ -4,8 +4,8 @@ if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
 }
 
 // Admin credentials (fallback when DB is unavailable)
-define('ADMIN_USER', 'admin');
-define('ADMIN_PASS', 'admin123');
+define('ADMIN_USER', getenv('ADMIN_USER') ?: '');
+define('ADMIN_PASS', getenv('ADMIN_PASS') ?: '');
 
 // Base paths
 define('ADMIN_PATH', dirname(__FILE__) . '/');

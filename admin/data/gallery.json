@@ -1,42 +1,63 @@
 [
     {
-        "src": "https:\/\/images.unsplash.com\/photo-1519671482749-fd09be7ccebf?w=800",
+        "id": 1,
         "title": "Wedding Reception",
-        "location": "The Hamptons, NY"
+        "location": "The Hamptons, NY",
+        "image": "",
+        "category": "general"
     },
     {
-        "src": "https:\/\/images.unsplash.com\/photo-1530103862676-de8c9debad1d?w=600",
+        "id": 2,
         "title": "Corporate Gala",
-        "location": "Manhattan, NY"
+        "location": "Manhattan, NY",
+        "image": "",
+        "category": "general"
     },
     {
-        "src": "https:\/\/images.unsplash.com\/photo-1464366400600-7168b8af9bc3?w=600",
+        "id": 3,
         "title": "Garden Party",
-        "location": "Napa Valley, CA"
+        "location": "Napa Valley, CA",
+        "image": "",
+        "category": "general"
     },
     {
-        "src": "https:\/\/images.unsplash.com\/photo-1551218808-94e220e084d2?w=800",
+        "id": 4,
         "title": "Behind the Scenes",
-        "location": "Our Kitchen"
+        "location": "Our Kitchen",
+        "image": "",
+        "category": "general"
     },
     {
-        "src": "https:\/\/images.unsplash.com\/photo-1414235077428-338989a2e8c0?w=600",
+        "id": 5,
         "title": "Dinner Setup",
-        "location": "Private Estate"
+        "location": "Private Estate",
+        "image": "",
+        "category": "general"
     },
     {
-        "src": "https:\/\/images.unsplash.com\/photo-1504674900247-0877df9cc836?w=600",
+        "id": 6,
         "title": "Pan-Asian Night",
-        "location": "London, UK"
+        "location": "London, UK",
+        "image": "",
+        "category": "general"
     },
     {
-        "src": "https:\/\/images.unsplash.com\/photo-1565299624946-b28f40a0ae38?w=600",
+        "id": 7,
         "title": "Dessert Art",
-        "location": "Seasonal Menu"
+        "location": "Seasonal Menu",
+        "image": "",
+        "category": "general"
     },
     {
-        "src": "https:\/\/images.unsplash.com\/photo-1571896349842-33c89424de2d?w=600",
+        "id": 8,
         "title": "Lakeside Dinner",
-        "location": "Lake Como, Italy"
+        "location": "Lake Como, Italy",
+        "image": "",
+        "category": "general"
+    },
+    {
+        "title": "",
+        "location": "",
+        "src": "admin\/uploads\/gallery_1790665182_1104.png"
     }
 ]

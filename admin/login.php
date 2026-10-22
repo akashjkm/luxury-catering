@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Fallback if DB is offline or initial setup
-    if (!$authenticated && $user === ADMIN_USER && $pass === ADMIN_PASS) {
+    if (!$authenticated && ADMIN_USER !== '' && ADMIN_PASS !== '' && $user === ADMIN_USER && $pass === ADMIN_PASS) {
         $authenticated = true;
         $adminUser = ADMIN_USER;
     }
@@ -94,9 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" class="btn btn-login">Sign In</button>
         </form>
 
-        <p style="color: rgba(255,255,255,0.25); font-size: 0.75rem; text-align: center; margin-top: 25px;">
-            Default: admin / admin123
-        </p>
     </div>
 </body>
 </html>
