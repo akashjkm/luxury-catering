@@ -352,7 +352,6 @@ $testimonial_items = $testimonials_data;
                 <div class="venue-card-overlay">
                     <h4 class="venue-card-name">The Plaza Ballroom</h4>
                     <p class="venue-card-location">New York, USA</p>
-                    <P>we bring our culinary expertise to the iconic plaza ballroom 
                 </div>
             </div>
 
